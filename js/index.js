@@ -26,6 +26,13 @@ window.addEventListener('mousemove', (event) => {
 $startAndStop.addEventListener('click', (event) => {
 	if (!isRecording)
 	{
+		if (event.detail % 2)
+		{
+		return 	
+		}
+
+		
+
 		
 
 
