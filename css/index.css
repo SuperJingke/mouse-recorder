@@ -3,8 +3,19 @@
 	height: 0.75em;
 	border-radius: 50%;
 	background-color: black;
-
 	position: fixed;
-	top: 0;
-	left: 0;
+	vertical-align: middle;
+	text-align: center;
+	padding: 1em 0.5em 1em 0.5em;
+	
 }
+
+.butts{
+	
+	border-radius: 50%;
+	position: fixed;
+	justify-content: center;
+	padding: 1em 0.5em 1em 0.5em;
+	margin: 0.5em;
+}
+

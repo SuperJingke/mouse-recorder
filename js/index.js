@@ -19,50 +19,49 @@ window.addEventListener('mousemove', (event) => {
 		console.log(event.clientX, event.clientY, event.timeStamp)
 		// Record the data to the Array:
 		console.log("Not recording!")
+		mouseMoves.push(event.clientX, event.clientY, t)
+
 
 	}
 })
 
+
 $startAndStop.addEventListener('click', (event) => {
 	if (!isRecording)
 	{
-		if (event.detail % 2)
-		{
-		return 	
-		}
-
-		
-
-		
-
+		t = event.timeStamp
+		execute()
+	
 
 		
 	}
 	// Start/stop the recording
 })
 
-$replayRecording.addEventListener('click', (event) => {
+// Ask for permission to use microphone before recording
+function record() {
+	window.navigator.mediaDevices.getUserMedia ({
+		audio: true
+	}) .then(MediaStream => {
+		console.log(MediaStream);
+		beginRecord(mediaStream);
+	}) .catch(err =>{
+		console.error(err)
+	})
+}
+
+function beginRecord(mediaStream){
+	let audioContext = new (window.AudioContext || window.webkitAudioContext);
+	let mediaNode = audioContext.createMediaStreamSource(mediaStream);
+	mediaNode.connect(audioContext.destination);
+}
+
+
+
+
+
+
+$replayRecording.addEventListener('click', (audio) => {
 	// Replay recording
 })
 
-
-let count = 0;
-let timer;
-
-const printHello = () => {
-	console.log('Hello')
-	if (count >)
-}
-
-// for (let index=0; index < 3; index++){
-
-//} printHello()
-//}
-
-console.log(`here`);
-
-printHello()
-
-setTimeout(printHello, 1000)
-
-console.log(`here`) // Here, to show it's a sync
