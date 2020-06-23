@@ -28,3 +28,13 @@ ul.ul {
 	margin-inline-end: 0px;
 	padding-inline-start: 40px;
 }
+.footer {
+	padding-top: 25px;
+	padding-left: 0;
+	padding-right: 0;
+	width: auto;
+	background-color: #333;
+	justify-content: left;
+	text-align: left;
+	width: auto;
+  }

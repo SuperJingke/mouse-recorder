@@ -30,13 +30,19 @@ $startAndStop.addEventListener('click', (event) => {
 	if (!isRecording)
 	{
 		t = event.timeStamp
-		execute()
+		record()
 	
 
 		
+	} else if (isRecording){
+		console.log(`pause`)
 	}
+
 	// Start/stop the recording
 })
+
+
+
 
 // Ask for permission to use microphone before recording
 function record() {
@@ -60,8 +66,11 @@ function beginRecord(mediaStream){
 
 
 
-
+// Replay recording
 $replayRecording.addEventListener('click', (audio) => {
-	// Replay recording
+
+	audio.src = window.URL.createObjectURL(this.audioData)
+
+
 })
 
